@@ -32,11 +32,11 @@ func Product(db *sql.DB) {
 	for rows.Next(){
 		var (
 			brand,model,color string
-			year,id int
+			year,id,count int
 			price float64
 		)
 
-		if err:=rows.Scan(&id,&brand,&model,&year,&color,&price); err!=nil{
+		if err:=rows.Scan(&id,&brand,&model,&year,&color,&price,&count); err!=nil{
 			log.Fatal(err)
 		}
 
