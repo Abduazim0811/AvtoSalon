@@ -15,9 +15,9 @@ func Product(db *sql.DB) {
 	)
 	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Millisecond)
 	defer cancel()
-	fmt.Println("Mashinalardan birini tanlang")
+	fmt.Println("\nMashinalardan birini tanlang")
 
-	name := "..internal/DB/selectauto.sql"
+	name := "../internal/DB/selectauto.sql"
 
 	query, err := os.ReadFile(name)
 	if err != nil {

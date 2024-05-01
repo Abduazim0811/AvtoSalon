@@ -15,9 +15,9 @@ import (
 func Signin(db *sql.DB) {
 	var (
 		us md.User
-		mp map[string]string
+		mp map[string]string=make(map[string]string)
 	)
-	ctx, cansel := context.WithTimeout(context.Background(), 100*time.Millisecond)
+	ctx, cansel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cansel()
 	fmt.Print("Email: ")
 	fmt.Scanln(&us.Email)

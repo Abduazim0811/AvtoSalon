@@ -39,6 +39,16 @@ func main() {
 			log.Fatal(err)
 		}
 	}
+	name:="../internal/DB/insertauto.sql"
+	sqlfile,err:=os.ReadFile(name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_,err=db.Exec(string(sqlfile))
+	if err!=nil{
+		log.Fatal(err)
+	}
 
 	fmt.Println("[1]Users\t[2]Admin")
 	fmt.Scanln(&num)

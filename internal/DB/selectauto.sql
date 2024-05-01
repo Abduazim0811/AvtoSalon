@@ -1,1 +1,1 @@
-select *from Auto;
+SELECT * FROM Auto;
