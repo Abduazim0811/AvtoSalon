@@ -40,28 +40,18 @@ func Product(db *sql.DB) {
 			log.Fatal(err)
 		}
 
-		fmt.Printf("Id: %d\nBrand: %s\nModel: %s\n, Year: %d\n,Color: %s\n,Price: %f\n",id,brand,model,year,color,price )
+		fmt.Printf("\nId: %d\nBrand: %s\nModel: %s\nYear: %d\nColor: %s\nPrice: %f\n",id,brand,model,year,color,price )
 	}
 	fmt.Println("Yuqoridagilardan birini tanlang!!/nSonini kiriting:")
 	fmt.Scanln(&num)
-	name="../internal/DB/selectwhereauto.sql"
+	
 
+	name="../internal/DB/updateauto.sql"
 	sqlfile,err:=os.ReadFile(name)
 	if err!=nil{
 		log.Fatal(err)
 	}
-	
-	_,err=db.Query(string(sqlfile),num)
-	if err!=nil{
-		log.Fatal("Error id")
-	}
-
-	name="../internal/DB/updateauto.sql"
-	sqlfile,err=os.ReadFile(name)
-	if err!=nil{
-		log.Fatal(err)
-	}
-	_,err=db.Query(string(sqlfile),num)
+	_,err=db.Exec(string(sqlfile),num)
 	if err!=nil{
 		log.Fatal(err)
 	}
