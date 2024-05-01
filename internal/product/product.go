@@ -44,5 +44,26 @@ func Product(db *sql.DB) {
 	}
 	fmt.Println("Yuqoridagilardan birini tanlang!!/nSonini kiriting:")
 	fmt.Scanln(&num)
+	name="../internal/DB/selectwhereauto.sql"
+
+	sqlfile,err:=os.ReadFile(name)
+	if err!=nil{
+		log.Fatal(err)
+	}
 	
+	_,err=db.Query(string(sqlfile),num)
+	if err!=nil{
+		log.Fatal("Error id")
+	}
+
+	name="../internal/DB/updateauto.sql"
+	sqlfile,err=os.ReadFile(name)
+	if err!=nil{
+		log.Fatal(err)
+	}
+	_,err=db.Query(string(sqlfile),num)
+	if err!=nil{
+		log.Fatal(err)
+	}
+
 }
