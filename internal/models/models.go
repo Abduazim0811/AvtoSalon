@@ -2,7 +2,7 @@ package models
 
 type User struct{
 	Name string
-	Gmail string
+	Email string
 	Password string
 }
 

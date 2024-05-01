@@ -1,0 +1,1 @@
+Select email,password from users;

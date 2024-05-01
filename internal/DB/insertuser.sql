@@ -1,3 +1,3 @@
-insert into user(name,gmail,password) values(
-    "Abduazim","yusupovabduazim0811@gmail.com","Abduazim"
-)
+insert into users(name,gmail,password) values(
+    $1,$2,$3
+);
