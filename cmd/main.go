@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	admin "github.com/Abduazim0811/AvtoSalon/internal/Admin"
+	// admin "github.com/Abduazim0811/AvtoSalon/internal/Admin"
 	sin "github.com/Abduazim0811/AvtoSalon/internal/Signin"
 	sup "github.com/Abduazim0811/AvtoSalon/internal/Signup"
 	_ "github.com/lib/pq"
@@ -54,6 +54,7 @@ func main() {
 			os.Exit(0)
 		}
 	case 2:
-		admin.Admin()
+		fmt.Println("Tez orada admin panel ishlaydi!!!")
+		// admin.Admin()
 	}
 }
